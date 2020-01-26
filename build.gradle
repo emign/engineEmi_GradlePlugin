@@ -18,28 +18,15 @@ repositories {
 
 dependencies {
     api("com.soywiz.korlibs.korge.plugins:korge-gradle-plugin:$korgeVersion")
-}
-
-
-group 'me.emig'
-version '1.0'
-
-dependencies {
     compile gradleApi()
     compile localGroovy()
     compile "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 }
 
-/*
-compileKotlin {
-    kotlinOptions.jvmTarget = "1.8"
-}
-compileTestKotlin {
-    kotlinOptions.jvmTarget = "1.8"
-}
-*/
 
+group 'me.emig'
+version '1.0'
 
 defaultTasks 'jar'
 
