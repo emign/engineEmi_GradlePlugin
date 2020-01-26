@@ -1,12 +1,9 @@
 package me.emig.engineEmi.gradle
 
+import com.soywiz.korge.gradle.KorgeGradlePlugin
 import org.gradle.api.Plugin
 import org.gradle.api.Project
-import org.gradle.api.Task
 import java.net.URI
-
-import com.soywiz.korge.gradle.KorgeGradlePlugin
-import com.soywiz.korge.gradle.kotlin
 
 
 val engineEmiVersion = "0.32"
@@ -16,6 +13,8 @@ val engineEmiBintrayUrl = "https://dl.bintray.com/emign/engineEmi/"
 
 open class EngineEmiGradlePlugin : Plugin<Project> {
     override fun apply(project: Project) {
+
+
         project.repositories.apply {
             maven {
                 it.url = URI(korgeBintrayUrl)
@@ -39,12 +38,11 @@ open class EngineEmiGradlePlugin : Plugin<Project> {
 
         project.pluginManager.apply(KorgeGradlePlugin::class.java)
 
-
         project.dependencies.add("commonMainApi","me.emig:engineEmi:$engineEmiVersion")
 
-
         project.tasks.register("openLocal"){
-            it.group = "engineEmi"
+
+        it.group = "engineEmi"
             it.dependsOn("runJvmFirstThread")
         }
 
