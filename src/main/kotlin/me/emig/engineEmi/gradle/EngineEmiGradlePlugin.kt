@@ -16,6 +16,8 @@ val engineEmiBintrayUrl = "https://dl.bintray.com/emign/engineEmi/"
 
 open class EngineEmiGradlePlugin : Plugin<Project> {
     override fun apply(project: Project) {
+
+
         project.repositories.apply {
             maven {
                 it.url = URI(korgeBintrayUrl)
