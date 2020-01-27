@@ -6,7 +6,7 @@ import org.gradle.api.Project
 import java.net.URI
 
 
-val engineEmiVersion = "0.32"
+val engineEmiVersion = "0.26"
 val korgeBintrayUrl = "https://dl.bintray.com/korlibs/korlibs/"
 val engineEmiBintrayUrl = "https://dl.bintray.com/emign/engineEmi/"
 
@@ -36,7 +36,9 @@ open class EngineEmiGradlePlugin : Plugin<Project> {
             }
         }
 
+
         project.pluginManager.apply(KorgeGradlePlugin::class.java)
+
 
         project.dependencies.add("commonMainApi","me.emig:engineEmi:$engineEmiVersion")
 
