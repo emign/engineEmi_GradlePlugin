@@ -24,7 +24,7 @@ dependencies {
 }
 
 
-group '$GROUP_ID'
+group "$GROUP_ID"
 version "$engineEmiAndPluginVersion"
 
 defaultTasks 'jar'
