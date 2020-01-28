@@ -50,7 +50,7 @@ pluginBundle {
 
     plugins {
         engineEmi {
-            id = "$GROUP_ID.$ARTIFACT_ID"
+            id = "${GROUP_ID}.${ARTIFACT_ID}"
             displayName = ARTIFACT_ID
             description = 'Didactical Multiplatform Game Engine for Kotlin'
         }
@@ -60,8 +60,8 @@ pluginBundle {
 gradlePlugin {
     plugins {
         engineEmi {
-            id = "$GROUP_ID.$ARTIFACT_ID"
-            displayName = 'ARTIFACT_ID'
+            id = "${GROUP_ID}.${ARTIFACT_ID}"
+            displayName = "${ARTIFACT_ID}"
             description = 'Didactical Multiplatform Game Engine for Kotlin'
             implementationClass = 'me.emig.engineEmi.gradle.EngineEmiGradlePlugin'
         }
