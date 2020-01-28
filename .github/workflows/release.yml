@@ -1,0 +1,14 @@
+name: release
+
+on: push
+
+jobs:
+  build:
+    runs-on: [macos-10.15]
+    steps:
+      - uses: actions/checkout@v1
+      - run: ./gradlew release
+        env:
+          bintrayUser: ${{ secrets.bintrayUser }}
+          bintrayApiKey: ${{ secrets.bintrayApiKey }}
+          bintrayPassword: ${{ secrets.bintrayPassword }}
