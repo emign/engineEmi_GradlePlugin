@@ -24,8 +24,8 @@ dependencies {
 }
 
 
-group 'me.emig'
-version "$engineEmiGradlePluginVersion"
+group '$GROUP_ID'
+version "$engineEmiAndPluginVersion"
 
 defaultTasks 'jar'
 
@@ -44,14 +44,14 @@ artifacts {
 }
 
 pluginBundle {
-    website = 'https://emig.me/'
-    vcsUrl = 'https://github.com/korlibs/korge-plugins'
+    website = SITE_URL
+    vcsUrl = VCS_URL
     tags = ['engineEmi', 'emig', 'engine', 'game engine', 'multiplatform', 'kotlin']
 
     plugins {
         engineEmi {
-            id = 'me.emig.engineEmi'
-            displayName = 'engineEmi'
+            id = "$GROUP_ID.$ARTIFACT_ID"
+            displayName = ARTIFACT_ID
             description = 'Didactical Multiplatform Game Engine for Kotlin'
         }
     }
@@ -60,8 +60,8 @@ pluginBundle {
 gradlePlugin {
     plugins {
         engineEmi {
-            id = 'me.emig.engineEmi'
-            displayName = 'engineEmi'
+            id = "$GROUP_ID.$ARTIFACT_ID"
+            displayName = 'ARTIFACT_ID'
             description = 'Didactical Multiplatform Game Engine for Kotlin'
             implementationClass = 'me.emig.engineEmi.gradle.EngineEmiGradlePlugin'
         }
@@ -94,11 +94,12 @@ publishing {
 }
 
 task release(type: Task) {
+    //dependsOn("publish")
     dependsOn("publishAllPublicationsToMavenRepository")
     group="publishing"
     doLast {
 
-        ((HttpURLConnection)new URL("https://bintray.com/api/v1/content/$BINTRAY_ORGINIZATION/$BINTRAY_REPOSITORY/$BINTRAY_REPOSITORY/$engineEmiGradlePluginVersion/publish").openConnection()).with({
+        ((HttpURLConnection)new URL("https://bintray.com/api/v1/content/$BINTRAY_ORGINIZATION/$BINTRAY_REPOSITORY/$BINTRAY_REPOSITORY/$engineEmiAndPluginVersion/publish").openConnection()).with({
             requestMethod = 'POST'
             doOutput = true
 
