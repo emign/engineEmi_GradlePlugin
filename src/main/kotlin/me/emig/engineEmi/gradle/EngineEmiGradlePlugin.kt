@@ -6,7 +6,7 @@ import org.gradle.api.Project
 import java.net.URI
 
 
-val engineEmiVersion = "0.31"
+val engineEmiVersion = "0.32"
 val korgeBintrayUrl = "https://dl.bintray.com/korlibs/korlibs/"
 val engineEmiBintrayUrl = "https://dl.bintray.com/emign/engineEmi/"
 
