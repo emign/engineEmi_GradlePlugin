@@ -1,3 +1,4 @@
+![](https://img.shields.io/github/v/release/emign/engineEmi_GradlePlugin?labelColor=262B30)
 ```
 buildscript {
     repositories {
