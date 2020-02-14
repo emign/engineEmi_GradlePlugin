@@ -3,6 +3,7 @@ package me.emig.engineEmi.gradle
 import com.soywiz.korge.gradle.KorgeGradlePlugin
 import org.gradle.api.Plugin
 import org.gradle.api.Project
+import org.gradle.api.tasks.testing.Test
 import java.net.URI
 
 
@@ -53,11 +54,11 @@ open class EngineEmiGradlePlugin : Plugin<Project> {
             it.dependsOn("jsWebRun")
         }
 
-        project.tasks.register("runTests") {
+        project.tasks.register("runTests", Test::class.java) {
             it.group = "engineEmi"
             val name = it.project.name
             it.dependsOn(":$name:jvmTest")
-            println(":$name:jvmTest")
         }
     }
 }
+
