@@ -43,15 +43,19 @@ open class EngineEmiGradlePlugin : Plugin<Project> {
 
         project.dependencies.add("commonMainApi","me.emig:engineEmi:$engineEmiVersion")
 
-        project.tasks.register("openLocal"){
-
-        it.group = "engineEmi"
+        project.tasks.register("openLocal") {
+            it.group = "engineEmi"
             it.dependsOn("runJvmFirstThread")
         }
 
-        project.tasks.register("openInBrowser"){
+        project.tasks.register("openInBrowser") {
             it.group = "engineEmi"
             it.dependsOn("jsWebRun")
+        }
+
+        project.tasks.register("runTests") {
+            it.group = "engineEmi"
+            it.dependsOn("jvmTest")
         }
     }
 }
