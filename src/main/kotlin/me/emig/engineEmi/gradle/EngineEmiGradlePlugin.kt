@@ -55,7 +55,8 @@ open class EngineEmiGradlePlugin : Plugin<Project> {
 
         project.tasks.register("runTests") {
             it.group = "engineEmi"
-            it.dependsOn("jvmTest")
+            val name = it.project.name
+            it.dependsOn(":$name:jvmTest")
         }
     }
 }
