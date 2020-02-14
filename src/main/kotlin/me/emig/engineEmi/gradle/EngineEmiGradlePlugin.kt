@@ -57,6 +57,7 @@ open class EngineEmiGradlePlugin : Plugin<Project> {
             it.group = "engineEmi"
             val name = it.project.name
             it.dependsOn(":$name:jvmTest")
+            println(":$name:jvmTest")
         }
     }
 }
