@@ -1,13 +1,15 @@
 package me.emig.engineEmi.gradle
 
 import com.soywiz.korge.gradle.KorgeGradlePlugin
+
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.api.tasks.testing.Test
 import java.net.URI
 
 
-val engineEmiVersion = "0.37"
+
+val engineEmiVersion = "0.40"
 //val engineEmiVersion findProperty("engineEmiAndPluginVersion")
 val korgeBintrayUrl = "https://dl.bintray.com/korlibs/korlibs/"
 val engineEmiBintrayUrl = "https://dl.bintray.com/emign/engineEmi/"
@@ -54,11 +56,18 @@ open class EngineEmiGradlePlugin : Plugin<Project> {
             it.dependsOn("jsWebRun")
         }
 
-        project.tasks.register("runTests", Test::class.java) {
-            it.group = "engineEmi"
-            val name = it.project.name
-            it.dependsOn(":$name:jvmTest")
+        project.tasks.register("runTests", Test::class.java){
+
         }
+
+
+
+
+
+
+
+
+
     }
 }
 
