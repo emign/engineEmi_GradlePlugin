@@ -9,7 +9,7 @@ import java.net.URI
 
 
 
-val engineEmiVersion = "0.40"
+val engineEmiVersion = "0.41"
 //val engineEmiVersion findProperty("engineEmiAndPluginVersion")
 val korgeBintrayUrl = "https://dl.bintray.com/korlibs/korlibs/"
 val engineEmiBintrayUrl = "https://dl.bintray.com/emign/engineEmi/"
