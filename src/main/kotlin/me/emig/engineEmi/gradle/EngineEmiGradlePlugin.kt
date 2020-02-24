@@ -1,10 +1,8 @@
 package me.emig.engineEmi.gradle
 
 import com.soywiz.korge.gradle.KorgeGradlePlugin
-
 import org.gradle.api.Plugin
 import org.gradle.api.Project
-import org.gradle.api.tasks.testing.Test
 import java.net.URI
 
 
@@ -39,9 +37,7 @@ open class EngineEmiGradlePlugin : Plugin<Project> {
             }
         }
 
-
         project.pluginManager.apply(KorgeGradlePlugin::class.java)
-
 
         project.dependencies.add("commonMainApi","me.emig:engineEmi:$engineEmiVersion")
 
@@ -54,19 +50,6 @@ open class EngineEmiGradlePlugin : Plugin<Project> {
             it.group = "engineEmi"
             it.dependsOn("jsWebRun")
         }
-
-        project.tasks.register("runTests", Test::class.java){
-
-        }
-
-
-
-
-
-
-
-
-
     }
 }
 
