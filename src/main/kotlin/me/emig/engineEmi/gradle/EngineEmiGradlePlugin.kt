@@ -8,7 +8,6 @@ import java.net.URL
 
 
 //val engineEmiVersion = "0.43"
-
 val engineEmiVersion = URL("https://emig.me/engineEmi/version.txt").readText()
 //val engineEmiVersion = "0.46-SNAPSHOT"
 
