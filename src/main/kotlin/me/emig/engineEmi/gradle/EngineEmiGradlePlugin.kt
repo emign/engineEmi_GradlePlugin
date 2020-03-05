@@ -4,6 +4,7 @@ import com.soywiz.korge.gradle.KorgeGradlePlugin
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import java.net.URI
+import java.net.URL
 
 
 //val engineEmiVersion = "0.43"
