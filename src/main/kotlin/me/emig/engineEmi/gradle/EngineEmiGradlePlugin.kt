@@ -8,8 +8,9 @@ import java.net.URL
 
 
 //val engineEmiVersion = "0.43"
-val engineEmiVersion = URL("https://emig.me/engineEmi/version.txt").readText()
+//val engineEmiVersion = URL("https://emig.me/engineEmi/version.txt").readText()
 //val engineEmiVersion = "0.46-SNAPSHOT"
+val engineEmiVersion = "0.50"
 
 val korgeBintrayUrl = "https://dl.bintray.com/korlibs/korlibs/"
 val engineEmiBintrayUrl = "https://dl.bintray.com/emign/engineEmi/"
