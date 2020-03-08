@@ -1,13 +1,13 @@
 plugins {
-    id 'org.jetbrains.kotlin.jvm' version "$kotlin_version"
+    id 'org.jetbrains.kotlin.jvm' version "$kotlinVersion"
     id 'com.gradle.plugin-publish' version '0.10.1'
     id 'java-gradle-plugin'
     id 'maven-publish'
     id "java"
 }
 
-def engineEmiAndPluginVersion = 'https://emig.me/engineEmi/version.txt'.toURL().text
-
+//def engineEmiAndPluginVersion = 'https://emig.me/engineEmi/version.txt'.toURL().text
+def engineEmiAndPluginVersion = '0.50'
 
 
 repositories {
@@ -23,12 +23,12 @@ dependencies {
     api("com.soywiz.korlibs.korge.plugins:korge-gradle-plugin:$korgeVersion")
     compile gradleApi()
     compile localGroovy()
-    compile "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    compile "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
+    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
 }
 
 
-group "$GROUP_ID"
+group "$group"
 version "$engineEmiAndPluginVersion"
 
 defaultTasks 'jar'
@@ -56,7 +56,7 @@ pluginBundle {
 
     plugins {
         engineEmi {
-            id = "${GROUP_ID}.${ARTIFACT_ID}"
+            id = "${group}.${ARTIFACT_ID}"
             displayName = ARTIFACT_ID
             description = 'Didactical Multiplatform Game Engine for Kotlin'
         }
@@ -66,7 +66,7 @@ pluginBundle {
 gradlePlugin {
     plugins {
         engineEmi {
-            id = "${GROUP_ID}.${ARTIFACT_ID}"
+            id = "${group}.${ARTIFACT_ID}"
             displayName = "${ARTIFACT_ID}"
             description = 'Didactical Multiplatform Game Engine for Kotlin'
             implementationClass = 'me.emig.engineEmi.gradle.EngineEmiGradlePlugin'
