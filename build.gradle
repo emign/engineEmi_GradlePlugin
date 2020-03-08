@@ -7,7 +7,7 @@ plugins {
 }
 
 //def engineEmiAndPluginVersion = 'https://emig.me/engineEmi/version.txt'.toURL().text
-def engineEmiAndPluginVersion = '0.50'
+def engineEmiAndPluginVersion = '0.51'
 
 
 repositories {
