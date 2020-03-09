@@ -4,13 +4,12 @@ import com.soywiz.korge.gradle.KorgeGradlePlugin
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import java.net.URI
-import java.net.URL
 
 
 //val engineEmiVersion = "0.43"
 //val engineEmiVersion = URL("https://emig.me/engineEmi/version.txt").readText()
 //val engineEmiVersion = "0.46-SNAPSHOT"
-val engineEmiVersion = "0.51"
+val engineEmiVersion = "0.50"
 
 val korgeBintrayUrl = "https://dl.bintray.com/korlibs/korlibs/"
 val engineEmiBintrayUrl = "https://dl.bintray.com/emign/engineEmi/"
