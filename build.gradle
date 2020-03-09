@@ -6,9 +6,6 @@ plugins {
     id "java"
 }
 
-//def engineEmiAndPluginVersion = 'https://emig.me/engineEmi/version.txt'.toURL().text
-def engineEmiAndPluginVersion = '0.50'
-
 
 repositories {
     maven {
@@ -29,7 +26,7 @@ dependencies {
 
 
 group "$GROUP_ID"
-version "$engineEmiAndPluginVersion"
+version "$version"
 
 defaultTasks 'jar'
 
@@ -105,7 +102,7 @@ task release(type: Task) {
     group="publishing"
     doLast {
 
-        ((HttpURLConnection)new URL("https://bintray.com/api/v1/content/$BINTRAY_ORGANIZATION/$BINTRAY_REPOSITORY/$BINTRAY_REPOSITORY/$engineEmiAndPluginVersion/publish").openConnection()).with({
+        ((HttpURLConnection)new URL("https://bintray.com/api/v1/content/$BINTRAY_ORGANIZATION/$BINTRAY_REPOSITORY/$BINTRAY_REPOSITORY/$version/publish").openConnection()).with({
             requestMethod = 'POST'
             doOutput = true
 
