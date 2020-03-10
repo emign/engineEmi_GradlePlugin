@@ -98,8 +98,7 @@ publishing {
                 }
             }
         }
-    }
-}
+    }}
 
 task release(type: Task) {
     //dependsOn("publish")
