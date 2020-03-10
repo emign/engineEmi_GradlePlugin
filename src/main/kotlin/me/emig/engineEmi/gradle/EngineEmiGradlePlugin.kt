@@ -40,7 +40,12 @@ open class EngineEmiGradlePlugin : Plugin<Project> {
         project.pluginManager.apply(KorgeGradlePlugin::class.java)
 
         project.dependencies.add("commonMainApi", "me.emig:engineEmi:$engineEmiVersion")
+
+
+
+        println("me.emig:engineEmi:$engineEmiVersion")
 /*
+
         project.tasks.register("openLocal") {
             it.group = "engineEmi"
             it.dependsOn("runJvmFirstThread")

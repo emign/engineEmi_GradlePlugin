@@ -18,10 +18,10 @@ repositories {
 
 dependencies {
     api("com.soywiz.korlibs.korge.plugins:korge-gradle-plugin:$korgeVersion")
-    compile gradleApi()
-    compile localGroovy()
-    compile "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    api gradleApi()
+    api localGroovy()
+    implementation "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 }
 
 
