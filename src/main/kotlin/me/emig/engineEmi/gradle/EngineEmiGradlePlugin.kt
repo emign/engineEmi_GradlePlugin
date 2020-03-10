@@ -16,7 +16,11 @@ val engineEmiBintrayUrl = "https://dl.bintray.com/emign/engineEmi/"
 
 open class EngineEmiGradlePlugin : Plugin<Project> {
     override fun apply(project: Project) {
+
         project.repositories.apply {
+            mavenLocal().content {
+                //it.excludeGroup("Kotlin/Native")
+            }
             maven {
                 it.url = URI(korgeBintrayUrl)
                 it.content {
@@ -42,8 +46,6 @@ open class EngineEmiGradlePlugin : Plugin<Project> {
         project.dependencies.add("commonMainApi", "me.emig:engineEmi:$engineEmiVersion")
 
 
-
-        println("me.emig:engineEmi:$engineEmiVersion")
 /*
 
         project.tasks.register("openLocal") {
