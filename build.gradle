@@ -78,6 +78,7 @@ publishing {
             credentials {
                 username = BINTRAY_ORGANIZATION
                 password = "$System.env.bintrayApiKey"
+
             }
             url = uri("https://api.bintray.com/maven/${BINTRAY_ORGANIZATION}/${BINTRAY_REPOSITORY}/${ARTIFACT_ID}/")
         }
@@ -111,6 +112,7 @@ task release(type: Task) {
             doOutput = true
 
             setRequestProperty("Authorization", "Basic " + "emign:${System.env.bintrayApiKey}".bytes.encodeBase64().toString())
+
             outputStream.withPrintWriter({printWriter ->
                 printWriter.write('{"discard": false, "publish_wait_for_secs": -1}')
             })
