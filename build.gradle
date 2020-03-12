@@ -1,5 +1,5 @@
 plugins {
-    id 'org.jetbrains.kotlin.jvm' version "$kotlin_version"
+    id 'org.jetbrains.kotlin.jvm' version "$kotlinVersion"
     id 'com.gradle.plugin-publish' version '0.10.1'
     id 'java-gradle-plugin'
     id 'maven-publish'
@@ -12,21 +12,23 @@ repositories {
         url "https://plugins.gradle.org/m2/"
     }
     maven { url = uri("https://dl.bintray.com/korlibs/korlibs") }
+
     mavenCentral()
     jcenter()
 }
 
 dependencies {
     api("com.soywiz.korlibs.korge.plugins:korge-gradle-plugin:$korgeVersion")
+
     api gradleApi()
     api localGroovy()
-    implementation "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
 }
 
 
 group "$GROUP_ID"
-version "$version"
+version "$pluginVersion"
 
 defaultTasks 'jar'
 
@@ -87,7 +89,8 @@ publishing {
         maven(MavenPublication) {
             groupId = "${GROUP_ID}.${ARTIFACT_ID}"
             artifactId = "${ARTIFACT_ID}"
-            version = "$version"
+            version = "$pluginVersion"
+
 
             pom {
                 name = "${name}";
@@ -106,7 +109,7 @@ task release(type: Task) {
     group="publishing"
     doLast {
 
-        ((HttpURLConnection)new URL("https://bintray.com/api/v1/content/$BINTRAY_ORGANIZATION/$BINTRAY_REPOSITORY/$BINTRAY_REPOSITORY/$version/publish").openConnection()).with({
+        ((HttpURLConnection)new URL("https://bintray.com/api/v1/content/$BINTRAY_ORGANIZATION/$BINTRAY_REPOSITORY/$BINTRAY_REPOSITORY/$pluginVersion/publish").openConnection()).with({
             requestMethod = 'POST'
             doOutput = true
 
