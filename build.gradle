@@ -6,7 +6,6 @@ plugins {
     id "java"
 }
 
-
 repositories {
     maven {
         url "https://plugins.gradle.org/m2/"
@@ -93,11 +92,11 @@ publishing {
 
 
             pom {
-                name = "${name}";
-                description = "${description}";
-                url = VCS_URL;
+                name = "${name}"
+                description = "${description}"
+                url = VCS_URL
                 scm {
-                    url = VCS_URL;
+                    url = VCS_URL
                 }
             }
         }
