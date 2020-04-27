@@ -19,7 +19,7 @@ open class EngineEmiGradlePlugin : Plugin<Project> {
 
         project.repositories.apply {
 
-           // mavenLocal()
+            mavenLocal()
             maven {
                 it.url = URI(korgeBintrayUrl)
                 it.content {
