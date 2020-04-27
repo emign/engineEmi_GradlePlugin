@@ -1,8 +1,6 @@
 buildscript {
 	repositories {
 		maven { url = uri("https://plugins.gradle.org/m2/") }
-
-		//maven { url = uri("https://dl.bintray.com/korlibs/korlibs") } // REMOVE
 		mavenCentral()
 
 	}
@@ -11,8 +9,6 @@ buildscript {
 		classpath("org.jetbrains.dokka:dokka-gradle-plugin:0.10.1")
 		classpath("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.4")
 		classpath("com.gradle.publish:plugin-publish-plugin:0.10.1")
-		//  classpath("com.soywiz.korlibs.korge.plugins:korge-gradle-plugin:1.5.6.2") // REMOVE
-
 	}
 }
 
@@ -29,7 +25,8 @@ plugins {
 
 repositories {
 	mavenCentral()
-	maven { url = uri("https://dl.bintray.com/korlibs/korlibs") }
+	maven { url = uri("https://dl.bintray.com/korlibs/korlibs/") }
+	maven { url = uri("https://plugins.gradle.org/m2/") }
 }
 
 gradlePlugin {
@@ -68,7 +65,6 @@ tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile::class).all {
 
 dependencies {
 	api("com.soywiz.korlibs.korge.plugins:korge-gradle-plugin:$korgeVersion")
-	implementation("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion")
 	implementation("org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion")
 	implementation(gradleApi())
 	implementation(localGroovy())
