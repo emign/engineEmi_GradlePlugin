@@ -1,3 +1,7 @@
+import java.io.PrintWriter
+import java.net.URL
+import java.util.*
+
 buildscript {
 	repositories {
 		maven { url = uri("https://plugins.gradle.org/m2/") }
@@ -56,7 +60,7 @@ group = GROUP_ID
 version = pluginVersion
 
 tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile::class).all {
-    kotlinOptions {
+	kotlinOptions {
 		//jvmTarget = "1.8"
 		jvmTarget = "1.6"
 	}
@@ -101,3 +105,37 @@ publishing {
 		}
 	}
 }
+
+fun ByteArray.encodeBase64() = Base64.getEncoder().encodeToString(this)
+
+val release by tasks.creating {
+	dependsOn("publish")
+	group = "publishing"
+
+	doLast {
+		val subject = BINTRAY_ORGANIZATION
+		val repo = "engineEmi"
+		val _package = ARTIFACT_ID
+		val version = pluginVersion
+
+		((URL("https://bintray.com/api/v1/content/$BINTRAY_ORGANIZATION/$BINTRAY_REPOSITORY/$BINTRAY_REPOSITORY/$version/publish")).openConnection() as java.net.HttpURLConnection).apply {
+
+			requestMethod = "POST"
+			doOutput = true
+
+
+			//setRequestProperty("Authorization", "Basic " + "$publishUser:$publishPassword".toByteArray().encodeBase64().toString())
+			setRequestProperty(
+				"Authorization",
+				"Basic " + "emign:${System.getenv("bintrayApiKey")}".toByteArray().encodeBase64().toString()
+
+			)
+			PrintWriter(outputStream).use { printWriter ->
+				printWriter.write("""{"discard": false, "publish_wait_for_secs": -1}""")
+			}
+			println(inputStream.readBytes().toString(Charsets.UTF_8))
+		}
+	}
+}
+
+tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> { kotlinOptions.jvmTarget = "1.8" }
