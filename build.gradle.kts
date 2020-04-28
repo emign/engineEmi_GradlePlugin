@@ -89,6 +89,20 @@ val javadocJar by tasks.creating(Jar::class) {
 publishing {
 	publications {
 		maybeCreate<MavenPublication>("maven").apply {
+
+			repositories {
+				maven {
+					credentials {
+						username = "emign"
+						password = System.getenv("bintrayApiKey")
+
+					}
+					url = uri(
+						"https://api.bintray.com/maven/emign/engineEmi/engineEmi/"
+
+					)
+				}
+			}
 			groupId = GROUP_ID
 			artifactId = ARTIFACT_ID
 			version = pluginVersion
