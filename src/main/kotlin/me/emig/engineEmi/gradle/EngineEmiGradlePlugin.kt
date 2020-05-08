@@ -5,10 +5,6 @@ import org.gradle.api.Plugin
 import org.gradle.api.Project
 import java.net.URI
 
-
-//val engineEmiVersion = "0.43"
-//val engineEmiVersion = URL("https://emig.me/engineEmi/version.txt").readText()
-//val engineEmiVersion = "0.46-SNAPSHOT"
 val engineEmiVersion = "0.71"
 
 val korgeBintrayUrl = "https://dl.bintray.com/korlibs/korlibs/"
