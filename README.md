@@ -12,5 +12,4 @@ buildscript {
 
 apply plugin: me.emig.engineEmi.gradle.EngineEmiGradlePlugin
 ```
-`gradle wrapper --gradle-version=5.6.4`.
-Add to `settings.gradle` : `enableFeaturePreview('GRADLE_METADATA')` 
+`gradle wrapper --gradle-version=6.3`.
