@@ -38,7 +38,6 @@ open class EngineEmiGradlePlugin : Plugin<Project> {
         }
         val engineEmiVersion  = project.property("engineEmiLibVersion").toString()
         project.pluginManager.apply(KorgeGradlePlugin::class.java)
-
         project.dependencies.add("commonMainApi", "me.emig:engineEmi:$engineEmiVersion")
 
 
