@@ -11,6 +11,9 @@ import java.net.URI
 val korgeBintrayUrl = "https://dl.bintray.com/korlibs/korlibs/"
 val engineEmiBintrayUrl = "https://dl.bintray.com/emign/engineEmi/"
 
+val engineEmiVersion  = "0.71"
+
+
 open class EngineEmiGradlePlugin : Plugin<Project> {
     override fun apply(project: Project) {
 
@@ -36,7 +39,8 @@ open class EngineEmiGradlePlugin : Plugin<Project> {
                 it.excludeGroup("Kotlin/Native")
             }
         }
-        val engineEmiVersion  = project.property("engineEmiLibVersion").toString()
+        println(project.properties)
+
         project.pluginManager.apply(KorgeGradlePlugin::class.java)
         project.dependencies.add("commonMainApi", "me.emig:engineEmi:$engineEmiVersion")
 
