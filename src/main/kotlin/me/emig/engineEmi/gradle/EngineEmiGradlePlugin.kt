@@ -19,7 +19,7 @@ open class EngineEmiGradlePlugin : Plugin<Project> {
 
         project.repositories.apply {
 
-            mavenLocal()
+            //mavenLocal()
             maven {
                 it.url = URI(korgeBintrayUrl)
                 it.content {
@@ -39,7 +39,7 @@ open class EngineEmiGradlePlugin : Plugin<Project> {
                 it.excludeGroup("Kotlin/Native")
             }
         }
-        println(project.properties)
+       
 
         project.pluginManager.apply(KorgeGradlePlugin::class.java)
         project.dependencies.add("commonMainApi", "me.emig:engineEmi:$engineEmiVersion")
