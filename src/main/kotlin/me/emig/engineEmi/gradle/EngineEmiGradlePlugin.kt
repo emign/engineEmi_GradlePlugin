@@ -11,7 +11,7 @@ import java.net.URI
 val korgeBintrayUrl = "https://dl.bintray.com/korlibs/korlibs/"
 val engineEmiBintrayUrl = "https://dl.bintray.com/emign/engineEmi/"
 
-val engineEmiVersion  = "0.79"
+val engineEmiVersion  = "0.80"
 
 
 open class EngineEmiGradlePlugin : Plugin<Project> {
