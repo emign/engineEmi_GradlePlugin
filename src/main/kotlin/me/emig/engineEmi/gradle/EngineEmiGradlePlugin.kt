@@ -13,7 +13,6 @@ val engineEmiBintrayUrl = "https://dl.bintray.com/emign/engineEmi/"
 
 val engineEmiVersion  = "0.80"
 
-
 open class EngineEmiGradlePlugin : Plugin<Project> {
     override fun apply(project: Project) {
 
