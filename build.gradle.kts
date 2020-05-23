@@ -61,8 +61,7 @@ version = pluginVersion
 
 tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile::class).all {
 	kotlinOptions {
-		//jvmTarget = "1.8"
-		jvmTarget = "1.6"
+		jvmTarget = "1.8"
 	}
 }
 
