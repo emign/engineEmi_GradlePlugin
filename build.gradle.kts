@@ -17,7 +17,7 @@ buildscript {
 }
 
 plugins {
-	kotlin("jvm") version "0.86"
+	kotlin("jvm") version "1.3.72"
 	//id("com.moowork.node") version "1.3.1"
 	id("maven-publish")
 	id("maven")
